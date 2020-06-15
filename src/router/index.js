@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // components
-import UserLogin from '@/components/UserLogin.vue'
+import UserLogin from '/components/UserLogin.vue'
 
 Vue.use(Router)
 
@@ -13,9 +13,9 @@ const router = new Router({
       name: 'login',
       component: UserLogin,
       meta: {
-        isPublic: true
+          isPublic: true
       }
-    },
+    }
   ]
 })
 

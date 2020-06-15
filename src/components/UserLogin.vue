@@ -1,16 +1,26 @@
 <template>
-    <div id="#app" class="page">
-        <div id="login">
-            acsys にログイン
+    <div id="#app">
+        <section>
             <div>
-                <label for="Mail"><input type="text" id="Mail" placeholder="メールアドレス" v-model="MailAddress"></label>
+                <div id="title-login">
+                    acsys にログイン
+                </div>
+                <div id="error-login">
+                    {{ErrorMessage}}
+                </div>
+                <div>
+                    <label for="Mail"><input type="email" id="Mail" placeholder="メールアドレス" v-model="MailAddress"></label>
+                </div>
+                <div>
+                    <label for="Pass"><input type="Password" id="Pass" placeholder="パスワード" v-model="Password"></label>
+                </div>
+                <button @click="login" :disabled="!isValidated">ログイン</button>
+                <UserLogin />
             </div>
-            <div>
-                <label for="Pass"><input type="Password" id="Pass" placeholder="パスワード" v-model="Password"></label>
+            <div id="new-account">
+                <a href="">アカウントの新規作成</a>
             </div>
-            <button @click="login">ログイン</button>
-            <UserLogin />
-        </div>
+        </section>
     </div>
 </template>
 
@@ -30,46 +40,55 @@
         data(){
           return{
               MailAddress : "",
-              Password: ""
+              Password: "",
+              ErrorMessage:"",
           }
         },
         methods:{
             login:function () {
-                auth.login(this.MailAddress,this.Password)
-            }
+                // eslint-disable-next-line no-unused-vars
+                this.ErrorMessage = auth.login(this.MailAddress, this.Password)
+            },
         },
+        computed: {
+            isValidated(){
+                return this.MailAddress !== "" && this.Password !== ""
+            }
+        }
     }</script>
 
 <style scoped>
-    .page{
+
+    button, input,div{
         font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-    }
-    #login{
         text-align: center;
+    }
+
+    #title-login{
         font-size: 40px;
         margin-top: 100px;
-        margin-left: 10px;
-        margin-right:10px;
+    }
+
+    #new-account{
+        font-size: 20px;
+        margin-top: 15px;
     }
 
     input {
         width: 25em;
         font-size: 20px;
         margin-top: 40px;
-        font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
     }
 
     button {
         width: 25em;
         font-size: 20px;
-        margin-top: 30px;
+        margin-top: 40px;
         padding:5px;
         line-height: normal;
         display:inline-block;
-        font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
-
     }
 
     @media only screen and (max-device-width : 850px) {
@@ -78,14 +97,12 @@
             width: 95%;
             font-size: 20px;
             margin-top: 40px;
-            font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
         }
 
         button {
             width: 95%;
             font-size: 20px;
-            margin-top: 30px;
-            font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+            margin-top: 40px;
         }
     }
 </style>
