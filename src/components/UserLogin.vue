@@ -18,12 +18,27 @@
 
     import UserLogin from './UserLogin.vue'
 
+    const auth = {
+        login:function (mail,pass) {
+            window.alert("mailaddress:" + mail + "\n" + "password:" + pass)
+        }
+    };
     export default {
         components:{
             UserLogin
         },
-    }
-</script>
+        data(){
+          return{
+              MailAddress : "",
+              Password: ""
+          }
+        },
+        methods:{
+            login:function () {
+                auth.login(this.MailAddress,this.Password)
+            }
+        },
+    }</script>
 
 <style scoped>
     .page{
