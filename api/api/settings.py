@@ -25,7 +25,9 @@ SECRET_KEY = '_f=3hiw1le-n6d2%q*(ex2^44=gt*ypqo^zjodhs=9@f0_g9m*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+# aws　テザリング用
+]
 
 
 # Application definition
@@ -38,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'users',
+    'calorie',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = "users.UserProfile"
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
