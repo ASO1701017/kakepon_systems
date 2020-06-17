@@ -18,7 +18,7 @@
                 <UserLogin />
             </div>
             <div id="new-account">
-                <a href="">アカウントの新規作成</a>
+                <router-link to="/signin">アカウントの新規作成</router-link>
             </div>
         </section>
     </div>

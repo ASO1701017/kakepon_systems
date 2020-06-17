@@ -18,8 +18,8 @@ export default new Router({
           }
         },
           {
-          path: '/singin',
-          name: 'singin',
+          path: '/signin',
+          name: 'signin',
           component: UserSignIn,
           meta: {
               isPublic: true
