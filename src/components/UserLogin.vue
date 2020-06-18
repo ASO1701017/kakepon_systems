@@ -5,8 +5,8 @@
                 <div id="title-login">
                     acsys にログイン
                 </div>
-                <div id="error-login">
-                    {{ErrorMessage}}
+                <div id="error-login" v-if="!ErrorMessage">
+                    メールアドレスかパスワードが間違っています
                 </div>
                 <div>
                     <label for="Mail"><input type="email" id="Mail" placeholder="メールアドレス" v-model="MailAddress"></label>
@@ -31,8 +31,17 @@
     const auth = {
         login:function (mail,pass) {
             window.alert("mailaddress:" + mail + "\n" + "password:" + pass)
+            if (mail === "こんばんわ"){
+                window.alert("成功")
+                this.$router.replace("/")
+            }else {
+                this.ErrorMessage = false
+            }
         }
     };
+
+
+
     export default {
         components:{
             UserLogin
@@ -41,20 +50,20 @@
           return{
               MailAddress : "",
               Password: "",
-              ErrorMessage:"",
+              ErrorMessage:true,
           }
         },
         methods:{
             login:function () {
                 // eslint-disable-next-line no-unused-vars
-                this.ErrorMessage = auth.login(this.MailAddress, this.Password)
+                this.ErrorMessage = auth.login(this.MailAddress, this.Password);
             },
         },
         computed: {
-            isValidated(){
+            isValidated() {
                 return this.MailAddress !== "" && this.Password !== ""
             }
-        }
+        },
     }</script>
 
 <style scoped>
