@@ -3,7 +3,7 @@
         <div id="header">
             <h1>acsys</h1>
             <ul id="menu">
-                <li><img src="../assets/カロリー貯金.png" width="80px" height="80px"><br></li>
+                <li><router-link to="/save_calorie"><img src="../assets/カロリー貯金.png" width="80px" height="80px"></router-link></li>
                 <li><img src="../assets/calendar.png" width="80px" height="80px"></li>
                 <li><img src="../assets/training.png" width="80px" height="80px"></li>
                 <li><img src="../assets/SNS.png" width="80px" height="80px"></li>
