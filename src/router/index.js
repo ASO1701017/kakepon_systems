@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // components
-import UserLogin from '../components/UserLogin.vue'
-import UserSignIn from "../components/UserSignIn.vue"
-import Top from "../components/Top.vue"
+import UserLogin from '../components/UserLogin'
+import UserSignIn from "../components/UserSignIn"
+import Top from "../components/Top"
 import Save_calorie from "../components/Save_calorie";
 
 Vue.use(Router)

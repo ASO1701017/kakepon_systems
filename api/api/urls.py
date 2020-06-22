@@ -26,7 +26,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.urls import path, re_path
 from django.views.static import serve
-from api.settings import MEDIA_ROOT
+from api.api.settings import MEDIA_ROOT
 
 urlpatterns = [
     path('admin/', admin.site.urls),
