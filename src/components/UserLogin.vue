@@ -91,7 +91,8 @@
     /*新規作成のリンク*/
     #login-new-account{
         font-size: 20px;
-        margin-top: 15px;
+        margin-top: 20px;
+        margin-bottom: 25px;
     }
 
     .cp_link {
