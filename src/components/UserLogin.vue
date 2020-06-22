@@ -111,7 +111,7 @@
 
     /*エラー文の表示エリア*/
     #error-login{
-        font-size: 24px;
+        font-size: 23px;
         margin-top: 15px;
         color: #ff7d6e;
         background: #ffebe9;
