@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import UserLogin from '../components/UserLogin.vue'
 import UserSignIn from "../components/UserSignIn.vue"
 import Top from "../components/Top.vue"
+import Save_calorie from "../components/Save_calorie";
 
 Vue.use(Router)
 
@@ -33,6 +34,10 @@ export default new Router({
           meta: {
               isPublic: true
           }
+        },
+          {
+            path: '/Save_calorie',
+            component: Save_calorie,
         }
       ]
     }
