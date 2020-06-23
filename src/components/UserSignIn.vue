@@ -110,11 +110,14 @@
                 UserHeight:"",
                 UserBodyWeight:"",
                 UserActiveLevel:"",
+                NameError:[],
             }
         },
         methods:{
             signin:function () {
-
+                window.alert("名前:" + this.UserName +"\n生年月日:" + this.UserBirthdayYear+this.UserBirthdayMonth+this.UserBirthdayDay
+                +"\n性別:"+this.UserGender +"\nメールアドレス:"+this.UserMail+"\nパスワード："+this.UserPass+"\n身長:"+this.UserHeight
+                +"\n体重"+this.UserBodyWeight+"\n身体活動レベル"+this.UserActiveLevel)
             }
         }
     }
