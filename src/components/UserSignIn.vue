@@ -133,6 +133,8 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #5c905c;
+        margin-right: 30px;
+        margin-left: 30px;
     }
 
     button,div{
